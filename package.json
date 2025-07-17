@@ -1,20 +1,16 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "a backend at nikhil channel",
-  "type": "module",
+  "description": "[model link](https://stackblitz.com/edit/stackblitz-starters-esnpmcew?description=&title=Express%20Starter)",
   "main": "index.js",
   "scripts": {
-    "dev" :"nodemon src/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "javascript",
     "backend",
-    "nik"
+    "nikh"
   ],
   "author": "nikhil garg",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^3.1.10"
-  }
+  "license": "ISC"
 }
