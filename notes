@@ -42,6 +42,35 @@ Package.json     .env    (readme, git, lint, prettier etc)
  -eraser reactjs
 
 
-#  for module type importing in package.json firstly we have to write type under description as module and then get the command from nodemon and execute on terminal
+#  for module type importing in package.json firstly we have to write type under description as module and then get the command from nodemon as "npm i -D nodemon" and execute on terminal
 then we get a new folder as node modules and then we have to change the script as 
 "dev": "nodemon src/index.js"
+
+
+
+
+
+# as more than one person works on the project so there may be many conflicts so for that we ahve to install prettier in our project as
+npm i -D prettier
+and we had to add some files manually
+1).prettierrc
+inside that we have to write code as 
+
+{
+  "singlequote": false,
+  "bracketSpacing": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "semi":
+
+}
+
+2).prettierignore
+insid this we have to write as 
+
+/.vscode
+/node_modules
+./dist
+*.env
+.env
+.env.*
