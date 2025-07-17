@@ -1,0 +1,42 @@
+-------------------------BackendDevelopment---------------
+it has 2 major components
+1) a programming language - java, js, php, golang
+2) a database - mongo, mysql, postgres, sqlite 
+
+browser  <---->  |  A | <---->   backend <----> | D |
+                 |  P |                         |   | <----> another continent
+mobile   <---->  |  I | <---->   backend <----> | B |
+
+------------JAVASCRIPT SPECIFIC-------------------
+-in JS based backend we had to deal with 3 things
+1) data
+2) file
+3) third party(API)
+
+-in JS we had many runtime choices like Nodejs/Deno/Bun
+
+-File Structure
+Package.json     .env    (readme, git, lint, prettier etc)
+
+-while making an backend we had directory structre as --
+  index                APP                 constants
+(DB Connects)    (config, cookies)      (DB-name, enums)
+
+-DB           (actual code that connects the data)
+-Models       (data schema)
+-Controllers  (methods or functions of data)
+-Routes       (/signup etc)
+-MiddleWares  ()
+-Utils        (utility)
+-More(depends)
+
+
+
+
+--First thing before starting an project is we had to find what data we had to store
+
+
+
+------TOOLS-----------
+ -moonmodeler
+ -eraser reactjs
