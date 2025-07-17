@@ -40,3 +40,8 @@ Package.json     .env    (readme, git, lint, prettier etc)
 ------TOOLS-----------
  -moonmodeler
  -eraser reactjs
+
+
+#  for module type importing in package.json firstly we have to write type under description as module and then get the command from nodemon and execute on terminal
+then we get a new folder as node modules and then we have to change the script as 
+"dev": "nodemon src/index.js"
