@@ -3,6 +3,7 @@ import { registerUser } from "../controllers/user.controller.js";
 
 // for uploading images we imported the below command
 import {upload} from "../middlewares/multer.middleware.js"
+
 const router = Router()
 
 router.route("/register").post(
@@ -18,5 +19,6 @@ router.route("/register").post(
     ]),
     registerUser
 )
+
 
 export default router
