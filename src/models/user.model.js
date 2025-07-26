@@ -56,7 +56,7 @@ const userSchema = new Schema(
 // which will encrypt our password
 
 userSchema.pre("save",async function (next) {
-    if(this.isModified("password")) return next(); 
+    if(!this.isModified("password")) return next(); 
 
     this.password = await bcrypt.hash(this.password, 10)
     next()
@@ -65,34 +65,34 @@ userSchema.pre("save",async function (next) {
 // in the below command we have created a method to check 
 // if the password is correct or not
 
-userSchema.methods.isPsswordCorrect = async function(password){
+userSchema.methods.isPasswordCorrect = async function(password){
    return await bcrypt.compare(password, this.password)
 }
-userSchema.methods.generateAcessToken = function(){
-    jwt.sign(
+userSchema.methods.generateAccessToken = function(){
+    return  jwt.sign(
          {
-          _id: this.id,
+          _id: this._id,
           email: this.email,
           userName: this.userName,
           fullName: this.fullName
          },
-         process.env.ACESS_TOKEN_SECRET,
+         process.env.ACCESS_TOKEN_SECRET,
          {
             expiresIn: process.env.ACCESS_TOKEN_EXPIRY
          }
-    )
+    );
 }
 
 userSchema.methods.generateRefreshToken = function(){
-    jwt.sign(
+    return jwt.sign(
          {
-          _id: this.id,
+          _id: this._id,
          },
          process.env.REFRESH_TOKEN_SECRET,
          {
             expiresIn: process.env.REFRESH_TOKEN_EXPIRY
          }
-    )
+    );
 }
 
 export const User = mongoose.model("User", userSchema)
